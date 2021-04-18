@@ -1,80 +1,35 @@
-* {
-    box-sizing: border-box;
+body {
+    background-image: url(../images/foto\ madera.jpg);
+    margin: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 }
 
-body{
-    margin: 0;
-    padding: 0;
-}
-h1, h2{
-    text-align: center;
-    color: #ffefcf;
- 
-}
-h3 {
-    background-color: #ef8d32;
-    color: #374547;
-
+.buscador {
+    align-self: center
+    color white
 }
 
-img{
-    max-width: 100%;
-    height: auto;
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: black;
+    border border-radius: 10px;
 }
 
-header,
-footer {
-    background-color: #161c1c;
-    color: white;
-    padding: 15px 0;
+.carousel {
+    width: 98%
+    hight: 400px;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 5px (0, 0, 0, 0.719);
+    overflow: hidden; 
 }
 
-header .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    text-align:center
+.titulos {
+    color: azure;
+    padding: 15%;
+    gap: 20%;
+    align-self: center;
+    justify-content: center;
+    font-size: x-large
 }
-footer .contenedor {
-    display: flex;
-
-}
-
-nav {
-    flex-grow: 1;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 15px 0 0 0;
-    padding: 0;
-    justify-content: space-between;
-}
-
-nav ul li a {
-    display: block;
-    background-color: #374547;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 5px 15px;
-}
-
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: black;
-}
-
-main{
-    background-color: #374547;
-}
-
-.contenedor{
-    text-align: center;
-    color: #ffefcf;
-    margin-top: 15%;
-    margin bottom: 15%;
-    
