@@ -34,6 +34,7 @@ header .contenedor {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+    text-align:center
 }
 footer .contenedor {
     display: flex;
@@ -53,8 +54,6 @@ nav ul {
     justify-content: space-between;
 }
 
-
-
 nav ul li a {
     display: block;
     background-color: #374547;
@@ -73,3 +72,9 @@ main{
     background-color: #374547;
 }
 
+.contenedor{
+    text-align: center;
+    color: #ffefcf;
+    margin-top: 15%;
+    margin bottom: 15%;
+    
