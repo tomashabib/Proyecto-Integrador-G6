@@ -9,11 +9,12 @@ body{
 h1, h2{
     text-align: center;
     color: #ffefcf;
- 
+    font-family: 'Contrail One', cursive;
 }
 h3 {
     background-color: #ef8d32;
     color: #374547;
+    font-family: 'Righteous', cursive;
 
 }
 
@@ -54,7 +55,6 @@ nav ul {
 }
 
 
-
 nav ul li a {
     display: block;
     background-color: #374547;
@@ -66,10 +66,11 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.4);
-    color: black;
+    color: #161c1c;
 }
 
 main{
+    
     background-color: #374547;
 }
 
