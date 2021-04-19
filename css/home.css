@@ -58,6 +58,14 @@ nav ol li a {
 nav ol li {
     color: #ffefcf;
 }
+.tituloartist{
+    text-align: center;
+    color: #ffefcf;
+    font-family: 'Contrail One', cursive;
+    background-color: #ef8d32;
+    padding: 5px;
+
+}
 
 img{
     max-width: 100%;
