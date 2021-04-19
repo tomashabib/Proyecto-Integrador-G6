@@ -10,6 +10,14 @@ footer {
    display: flex;
 }
 
+<<<<<<< HEAD
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: black;
+    border border-radius: 10px;
+=======
 header .contenedor {
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -19,6 +27,7 @@ header .contenedor {
 }
 .contenedor nav ul {
     list-style: none;
+>>>>>>> 13208284094d033a99ea6ab297e67b77eb8b23df
 }
 
 nav ul li a {
@@ -40,6 +49,8 @@ h1, h2{
     font-family: 'Contrail One', cursive;
 }
 
+<<<<<<< HEAD
+=======
 h3 {
     background-color: #ef8d32;
     color: #374547;
@@ -83,3 +94,4 @@ footer .contenedor {
     background-color: rgb(182, 123, 123);
 }
 
+>>>>>>> 13208284094d033a99ea6ab297e67b77eb8b23df
