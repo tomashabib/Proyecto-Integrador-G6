@@ -9,6 +9,7 @@ body {
     color white
 }
 
+
 header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -33,3 +34,4 @@ header {
     justify-content: center;
     font-size: x-large
 }
+
