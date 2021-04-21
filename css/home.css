@@ -1,6 +1,7 @@
 body {
     background-image: url(../images/foto\ madera.jpg); 
     margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header,
@@ -48,6 +49,7 @@ nav ul li a:hover {
 h1, h2{
     text-align: center;
     color: #ffefcf;
+    text-transform: uppercase;
     font-family: 'Contrail One', cursive;
 }
 
@@ -111,3 +113,80 @@ footer .contenedor {
 nav ul li {
     color: #ffefcf;
 }
+
+.contenedor.playlist ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  
+    
+}
+
+.contenedor.playlist ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    
+}
+
+/*
+.contenedor.playlist ul li img {
+    width: 20%;
+    
+}
+*/
+
+.contenedor.playlist ul li img {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    
+}  
+
+.contenedor.canciones {
+    text-align: center;
+    color: white;
+
+}
+
+.contenedor.canciones .imagenprincipal {
+    width: 70%;
+
+}
+
+.botonesplaylist * {
+    margin: 1em; 
+    color: white;
+}
+
+.contenedor.generos ul {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+    
+}
+
+.contenedor.generos ul li {
+    border: 1px solid white;
+    padding: 2em;
+    background-color:  #374547;
+    border: 1px solid white;
+	padding: 2em;
+	flex: 1 0 auto;
+	margin: 5px;
+    text-align: center;
+    display: block;
+	text-decoration: none;
+	border: 1px solid white;
+	padding: .5em 1em;
+	margin: 5px;
+	text-align: center;
+    
+}
+
+
+
