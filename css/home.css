@@ -23,18 +23,16 @@ header .contenedor {
     flex-wrap: wrap;
 }
 
-.contenedor nav ul {
-    list-style: none;
-}
-
 nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    list-style: none;
+    padding: 15px;
 }
 
 nav ul li a {
-    display: block;
+    display: inline-block;
     background-color: #374547;
     color: white;
     text-decoration: none;
