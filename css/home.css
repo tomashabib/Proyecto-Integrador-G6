@@ -1,6 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-image: url(../images/foto\ madera.jpg); 
-    margin: 30px;
+    margin: 0;
+    padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -12,9 +17,7 @@ footer {
 }
 
 header .contenedor {
-    padding-right: 20%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -24,10 +27,8 @@ header .contenedor {
 }
 
 nav ul {
-   
-    
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -57,11 +58,13 @@ h3 {
     background-color: #ef8d32;
     color: #374547;
     font-family: 'Righteous', cursive;
+    text-align: center;
 }
 
 h4 {
     color: #ef8d32;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
 }
 nav ol li a {
     color: #ffefcf;
@@ -106,7 +109,7 @@ footer .contenedor {
     display:flex;
     flex-direction: row;
     width: 20%;
-    height: 2em;
+    height: auto;
     background-color: #374547;
 }
 
@@ -188,5 +191,22 @@ nav ul li {
     
 }
 
+    .imagenprincipal {
+        max-width: 80%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display:block;
+    }
 
+    .contenedor section article figure img {
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+        }
 
+        p {
+            color: #ffefcf;
+        }
+        
+        
