@@ -22,6 +22,7 @@ header .contenedor {
     align-items: center;
     flex-wrap: wrap;
 }
+
 .contenedor nav ul {
     list-style: none;
 }
@@ -32,7 +33,6 @@ nav ul {
     justify-content: space-between;
 }
 
-
 nav ul li a {
     display: block;
     background-color: #374547;
@@ -42,6 +42,7 @@ nav ul li a {
     padding: 5px 10px;
     margin: 1em;
 }
+
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.4);
     color: #161c1c;
@@ -66,11 +67,17 @@ h4 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
 }
+
 nav ol li a {
     color: #ffefcf;
     text-decoration: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+article {
+    display: inline-block;
+}
+
 nav ol li {
     color: #ffefcf;
 }
@@ -80,7 +87,6 @@ nav ol li {
     font-family: 'Contrail One', cursive;
     background-color: #ef8d32;
     padding: 5px;
-
 }
 
 img{
@@ -191,22 +197,25 @@ nav ul li {
     
 }
 
-    .imagenprincipal {
-        max-width: 80%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        display:block;
-    }
+.imagenprincipal {
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
 
-    .contenedor section article figure img {
-        height: 250px;
-        width: 250px;
-        object-fit: cover;
-        }
+    /* Detail artist */
+ .contenedor section article figure img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
 
-        p {
-            color: #ffefcf;
-        }
-        
-        
+p {
+    color: #ffefcf;
+}
+
+
+
+       
