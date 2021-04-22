@@ -166,6 +166,16 @@ nav ul li {
 
 }
 
+.contenedor.albumes {
+    text-align: center;
+    color:#ef8d32;
+
+}
+
+.contenedor.canciones .imagenprincipal {
+    width: 70%;
+}
+
 .botonesplaylist * {
     margin: 1em; 
     color: white;
