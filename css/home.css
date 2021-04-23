@@ -111,6 +111,7 @@ footer .contenedor {
     padding: 5px;
     background-color: #374547;
     margin: 10px;
+
 }
 
 .buscador1 {
@@ -125,6 +126,8 @@ footer .contenedor {
     flex-direction: row;
     width: 20%;
     height: auto;
+    float: right;
+    margin-top: 32px;
 }
 
 nav ul li {
