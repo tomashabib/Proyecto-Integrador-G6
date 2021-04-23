@@ -12,18 +12,11 @@
 <body>
 
     <header>
-        <div class="contenedor">
+        <div class="contenedor-header">
             <div id="logo">
                 <a href="index.html">
                     <img src="images/logojukebox.png" alt="Jukebox logo">
                 </a>
-            </div>
-
-            <div class="buscador">
-                <form action="resultado.html" method="GET">
-                    <input class="buscador1" type="text" name="search" placeholder="Buscar..." />
-                    <input type="submit">
-                </form>
             </div>
 
             <nav>
@@ -36,25 +29,37 @@
                     <li><a href="detail-track.html">CANCIONES</a></li>
                 </ul>
             </nav>
+
+            <div class="buscador">
+                <form action="resultado.html" method="GET"> 
+                    <input class="buscador1" type="text" name="search" placeholder="Buscar..."/>
+                    <input type="submit">
+                </form>
+            </div>  
         </div>
     </header>
 
+
 <main>
-    <section id="portada">
-        <article>
-            <img src="images/portadaplaylist.jpg">
-        </article>
-    </section>
+    <div class="portada-playlist">
+        <section>
+            <article>
+                <img src="images/portadaplaylist.jpg">
+            </article>
+        </section>
+    </div>    
+    
     <div class="contenedor playlist">
-        <h1>Canciones agregadas</h1>
-        <ul>
-            <li><img src="images/theshowmustgoon.jpg" alt="imágen" title="theshowmustgo">The show must go on | autor
-            </li>
-            <li><img src="images/blackorwhite.jpg" alt="imágen" title="blackorwhite">Black or white | autor</li>
-            <li><img src="images/enjoythesilence.jpg" alt="imágen" title="enjoythesilence">Enjoy the silence | autor
-            </li>
-            <li><img src="images/style.jpg" alt="imágen" title="style">Style | autor</li>
-            <li><img src="images/fearofthedark.jpg" alt="imágen" title="fearofthedark">Fear of the dark | autor</li>
+        <div class="mis-canciones"><h1>Mis canciones</h1></div>
+            <ul>
+                <li class="cancion-agregada"><img src="images/theshowmustgoon.jpg" alt="imágen" title="theshowmustgo">The show must go on | Queen
+                </li>
+                <li class="cancion-agregada"><img src="images/blackorwhite.jpg" alt="imágen" title="blackorwhite">Black or white | Michael Jackson</li>
+                <li class="cancion-agregada"><img src="images/enjoythesilence.jpg" alt="imágen" title="enjoythesilence">Enjoy the silence | Depeche Mode
+                </li>
+                <li class="cancion-agregada"><img src="images/style.jpg" alt="imágen" title="style">Style | Prince</li>
+                <li class="cancion-agregada"><img src="images/fearofthedark.jpg" alt="imágen" title="fearofthedark">Fear of the dark | Iron Maiden</li>
+            </div>
         </ul>
     </div>
 </main>

@@ -14,17 +14,11 @@
 
 <body>
     <header>
-        <div class="contenedor">
+        <div class="contenedor-header">
             <div id="logo">
                 <a href="index.html">
                     <img src="images/logojukebox.png" alt="Jukebox logo">
                 </a>
-            </div>
-
-            <div class="buscador">
-                <form action="resultado.html" method="GET">
-                    <input class="buscador 1" type="text" name="search" placeholder="Buscar..." />
-                    <input type="submit">
             </div>
 
             <nav>
@@ -37,23 +31,36 @@
                     <li><a href="detail-track.html">CANCIONES</a></li>
                 </ul>
             </nav>
+
+            <div class="buscador">
+                <form action="resultado.html" method="GET"> 
+                    <input class="buscador1" type="text" name="search" placeholder="Buscar..."/>
+                    <input type="submit">
+                </form>
+            </div>  
         </div>
     </header>
 
-    <div class="contenedorcanciones">
-        <h1>Detalle de la canción</h1>
-        <h2>"The Show Must Go On"</h2>
+
+        <div class="tituloartist">
+            <h1>Detalle de la canción</h1>
+            <h2>"The Show Must Go On"</h2>
+        </div>
+
         <img src="images/Album Innuendo Queen.jpg" alt="Queen" class="imagenprincipal">
-        <p>
-            Nombre del Artistas: Queen | Nombre del album: Innuendo
-        </p>
+
+        <div class="botonesplaylist">
+            <p>
+                Nombre del Artistas: Queen | Nombre del album: Innuendo
+            </p>
+        </div>
 
         <div class="botonesplaylist">
             <div><a href="playlist.html">Ver mi Playlist</a></div>
             <div><img src="images/Agregar.png" alt="Agregar a mi Playlist" title="Agregar a mi Playlist"></div>
-            <audio src="audio/queen-the-show-must-go-on-official-video.mp3" controls=true></audio>
+            <div><audio src="audio/queen-the-show-must-go-on-official-video.mp3" controls=true></audio></div>
         </div>
-    </div>
+    
 
 
     <!--
