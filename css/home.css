@@ -1,9 +1,9 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 body {
-    background-image: url(../images/foto\ madera.jpg); 
+    background-image: url(../images/foto\ madera.jpg);
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,9 +11,9 @@ body {
 
 header,
 footer {
-   color: white;
-   background-color: black;
-   
+    color: white;
+    background-color: black;
+
 }
 
 header .contenedor {
@@ -46,7 +46,8 @@ nav ul li a:hover {
     color: #161c1c;
 }
 
-h1, h2{
+h1,
+h2 {
     text-align: center;
     color: #ffefcf;
     text-transform: uppercase;
@@ -80,7 +81,8 @@ article {
 nav ol li {
     color: #ffefcf;
 }
-.tituloartist{
+
+.tituloartist {
     text-align: center;
     color: #ffefcf;
     font-family: 'Contrail One', cursive;
@@ -89,7 +91,7 @@ nav ol li {
     font-size: 150%;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
@@ -115,7 +117,7 @@ footer .contenedor {
 .buscador {
     align-items: center;
     justify-content: center;
-    display:flex;
+    display: flex;
     flex-direction: row;
     width: 20%;
     height: auto;
@@ -130,8 +132,8 @@ nav ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;  
-    
+    width: 100%;
+
 }
 
 .contenedor.playlist ul li {
@@ -141,7 +143,7 @@ nav ul li {
     width: 100%;
     color: white;
     font-size: 20px;
-    
+
 }
 
 /*
@@ -155,8 +157,8 @@ nav ul li {
     width: 200px;
     height: 200px;
     margin: 5px;
-    
-}  
+
+}
 
 .contenedor.canciones {
     text-align: center;
@@ -171,7 +173,7 @@ nav ul li {
 
 .contenedor.albumes {
     text-align: center;
-    color:#ef8d32;
+    color: #ef8d32;
 
 }
 
@@ -180,34 +182,34 @@ nav ul li {
 }
 
 .botonesplaylist * {
-    margin: 1em; 
+    margin: 1em;
     color: white;
 }
 
 .contenedor.generos ul {
     display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: stretch;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
 }
 
 .contenedor.generos ul li {
     border: 1px solid white;
     padding: 2em;
-    background-color:  #374547;
+    background-color: #374547;
     border: 1px solid white;
-	padding: 2em;
-	flex: 1 0 auto;
-	margin: 5px;
+    padding: 2em;
+    flex: 1 0 auto;
+    margin: 5px;
     text-align: center;
     display: block;
-	text-decoration: none;
-	border: 1px solid white;
-	padding: .5em 1em;
-	margin: 5px;
-	text-align: center;
-    
+    text-decoration: none;
+    border: 1px solid white;
+    padding: .5em 1em;
+    margin: 5px;
+    text-align: center;
+
 }
 
 .imagenprincipal {
@@ -215,11 +217,11 @@ nav ul li {
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    display:block;
+    display: block;
 }
 
-    /* Detail artist */
- .contenedor section article figure img {
+/* Detail artist */
+.contenedor section article figure img {
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -229,6 +231,7 @@ nav ul li {
     text-align: center;
     margin: 50px;
 }
+
 .contenedorartista p {
     background-color: #374547a8;
     padding: 15px;
@@ -236,8 +239,8 @@ nav ul li {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 120%;
 }
+
 .contenedor {
     align-items: center;
     margin: 0px 50px;
 }
-
