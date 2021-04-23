@@ -16,14 +16,6 @@ footer {
     
 }
 
-.footer {
-    flex-direction: row-reverse;
-    align-items:center;
-    padding: 3px;
-    margin-left: 1000px;
-    
-  
-}
 
 header .contenedor {
     display: flex;
