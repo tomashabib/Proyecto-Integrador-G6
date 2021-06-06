@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -14,32 +14,28 @@
 </head>
 
 <body>
-    <header>
-        <div class="contenedor-header">
-            <div id="logo">
-                <a href="index.html">
-                    <img src="images/logojukebox.png" alt="Jukebox logo">
-                </a>
-            </div>
-
-            <div class="buscador">
-                <form action="resultado.html" method="GET"> 
-                    <input class="buscador1" type="text" name="search" placeholder="Buscar..."/>
-                    <input type="submit">
-                </form>
-            </div>  
-
-            <nav>
-                <ul>
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="detail-artist.html">ARTISTAS</a></li>
-                    <li><a href="playlist.html">PLAYLIST</a></li>
-                    <li><a href="generos.html">GÉNEROS</a></li>
-                    <li><a href="detail-album.html">ÁLBUMES</a></li>
-                    <li><a href="detail-track.html">CANCIONES</a></li>
-                </ul>
-            </nav>
-        </div>            
+    <header class="contenedor-header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/logojukebox.png" alt="Jukebox logo">
+            </a>
+        </div>
+        <div class="buscador">
+            <form action="resultado.html" method="GET"> 
+                <input class="buscador1" type="text" name="search" placeholder="Buscar..."/>
+                <input type="submit">
+            </form>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="detail-artist.html">ARTISTAS</a></li>
+                <li><a href="playlist.html">PLAYLIST</a></li>
+                <li><a href="generos.html">GÉNEROS</a></li>
+                <li><a href="detail-album.html">ÁLBUMES</a></li>
+                <li><a href="detail-track.html">CANCIONES</a></li>
+            </ul>
+        </nav>
     </header>
 
 
@@ -50,50 +46,50 @@
             </article>
         </section>
 
-        <div class="contenedor">
-            <section>
-                <article>
-                    <div class="tituloartist">
-                        <a name="queen">Queen</a>
-                    </div>
-                    <div class="contenedorartista">
-                        <img src="images/Queen .jpg" alt="Queen">
-                        <p>Queen es una banda británica de rock formada en 1970 en Londres por el cantante y pianista
-                            Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John
-                            Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros, los integrantes
-                            restantes, Brian May y Roger Taylor, continúan trabajando bajo el nombre Queen, por lo que
-                            la banda aún se considera activa. Es considerada una banda de gran influencia en el
-                            desarrollo del hard rock y el heavy metal, incorporando elementos del glam rock, rock
-                            progresivo, folk, ópera, blues y pop.</p>
-                    </div>
-
-                    <h4>Canciones</h4>
-                    <nav>
-                        <ul>
-                            <li>
-                                <figure><img src="images/71WVq7VqUkL._AC_SL1260_.jpg"><a href="">Bohemian Rhapsody</a>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure><img src="images/i want to break free.jpg"><a href="">I Want To Break Free</a>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure><img src="images/the show must go on.jpg"><a href="">The Show Must Go On</a>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure><img src="images/Under pressure.jpg"><a href="">Under Pressure</a></figure>
-                            </li>
-                            <li>
-                                <figure><img src="images/Another one bites the dust.jpg"><a href="">Another One Bites
-                                        The Dust</a></figure>
-                            </li>
-                        </ul>
-                    </nav>
-                </article>
-            </section>
-        </div>
+        
+        <section class="contenedor">
+            <article>
+                <div class="tituloartist">
+                    <a>Queen</a>
+                </div>
+                <div class="contenedorartista">
+                    <img src="images/Queen .jpg" alt="Queen">
+                    <p>Queen es una banda británica de rock formada en 1970 en Londres por el cantante y pianista
+                        Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John
+                        Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros, los integrantes
+                        restantes, Brian May y Roger Taylor, continúan trabajando bajo el nombre Queen, por lo que
+                        la banda aún se considera activa. Es considerada una banda de gran influencia en el
+                        desarrollo del hard rock y el heavy metal, incorporando elementos del glam rock, rock
+                        progresivo, folk, ópera, blues y pop.</p>
+                </div>
+            </article>
+            <article class="cancionesDeArtistas">
+                <h4>Canciones</h4>
+                
+                <ul class="botonesCanciones">
+                    <li>
+                        <figure><img src="images/71WVq7VqUkL._AC_SL1260_.jpg"><a href="detail-genres.html">Bohemian Rhapsody</a>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="images/i want to break free.jpg"><a href="detail-track.html">I Want To Break Free</a>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="images/the show must go on.jpg"><a href="detail-track.html">The Show Must Go On</a>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure><img src="images/Under pressure.jpg"><a href="detail-track.html">Under Pressure</a></figure>
+                    </li>
+                    <li>
+                        <figure><img src="images/Another one bites the dust.jpg"><a href="detail-track.html">Another One Bites
+                            The Dust</a></figure>
+                    </li>
+                </ul>                
+            </article>
+        </section>
+        
     </main>
 
     
