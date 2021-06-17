@@ -10,13 +10,14 @@ window.addEventListener("load", function(){
             return respuesta.json()
         })
         .then(function(datos){
-        // pido los datos que necesito de la URL (Artistas-Discos-Canciones)
+        // Pido los datos que necesito de la URL (Artistas-Albumes-Canciones)
             console.log(datos)
             let losArtistas = datos.artists.data
             let losAlbumes = datos.albums.data
             let lasCanciones = datos.tracks.data
             // la info que llego de la API la pongo dentro de mi codigo html
-            // ARISTAS
+            // ARTISTAS
+    fetch (urlArtistas)
             for (let i=0; i<5; i++){
                 listadoArtistas.innerHTML += `
                 <div class="textos">
@@ -25,6 +26,7 @@ window.addEventListener("load", function(){
                 </div>
                 `}
             // ALBUMES
+    fetch (urlAlbumes)
             for (let i=0; i<5; i++){
                 listadoAlbumes.innerHTML += `
                 <div class="textos">
