@@ -373,3 +373,20 @@ nav ul li {
         margin: 70px;    
     }
 }
+/* segunda parte del trabajo */
+/* intentando arreglar el index, q las imagenes aparezcan una al lado de la otra con el nombre abajo */
+.listadoArtistas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.listadoDiscos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.listadoCanciones{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
