@@ -17,7 +17,6 @@ window.addEventListener("load", function(){
             let lasCanciones = datos.tracks.data
             // la info que llego de la API la pongo dentro de mi codigo html
             // ARTISTAS
-    fetch (urlArtistas)
             for (let i=0; i<5; i++){
                 listadoArtistas.innerHTML += `
                 <div class="textos">
@@ -26,7 +25,6 @@ window.addEventListener("load", function(){
                 </div>
                 `}
             // ALBUMES
-    fetch (urlAlbumes)
             for (let i=0; i<5; i++){
                 listadoAlbumes.innerHTML += `
                 <div class="textos">
