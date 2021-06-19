@@ -1,49 +1,80 @@
 window.addEventListener("load", function(){
+    // donde voy a poner despues la info que traigo
     let listadoArtistas = document.querySelector(".listadoArtistas")
     let listadoDiscos = document.querySelector (".listadoDiscos")
     let listadoCanciones = document.querySelector(".listadoCanciones")
-    let urlIndex = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart"
-    
-    fetch(urlIndex)
+    // las url de donde traigo la info, para el FETCH
+    let urlArtista = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists"
+    let urlAlbum = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums"
+    let urlTrack = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks"
+    // ARTISTAS 
+    fetch(urlArtista)
         .then(function(respuesta){
             console.log(respuesta)
             return respuesta.json()
         })
         .then(function(datos){
-        // Pido los datos que necesito de la URL (Artistas-Albumes-Canciones)
+        // Pido los datos que necesito de la URL (nombre y foto artista)
             console.log(datos)
-            let losArtistas = datos.artists.data
-            let losDiscos = datos.albums.data
-            let lasCanciones = datos.tracks.data
+            let artistas = datos.data
             // la info que llego de la API la pongo dentro de mi codigo html
             // ARTISTAS
             for (let i=0; i<5; i++){
                 listadoArtistas.innerHTML += `
                 <div class="textos">
-                <figure><img src="${losArtistas[i].picture}" alt="${losArtistas[i].name}"></figure>
-                <a href="detail-artist.html">${losArtistas[i].name}</a>
+                <figure><img src="${artistas[i].picture}" alt="${artistas[i].name}"></figure>
+                <a href="detail-artist.html?id=${artistas[i].id}">${artistas[i].name}</a>
                 </div>
-                `}
-            // DISCOS
-            for (let i=0; i<5; i++){
-                listadoDiscos.innerHTML += `
-                <div class="textos">
-                <figure><img src="${losDiscos[i].cover}" alt="${losDiscos[i].title}"></figure>
-                <a href="detail-album.html">${losDiscos[i].title}</a>
-                <a href="detail-artist.html">${losArtistas[i].name}</a>
-                </div>
-                `}
-            for (let i=0; i<5; i++){
-                listadoCanciones.innerHTML += `
-                <div class="textos">
-                <figure><img src="${losDiscos[i].cover}" alt="${lasCanciones[i].title}"></figure>
-                    <a href="detail-track.html">${lasCanciones[i].title}</a>
-                    <a href="detail-artist.html">${losArtistas[i].name}</a>
-                    <a href="detail-album.html">${losDiscos[i].title}</a>
-                </div>
-            `}              
+            `}
         })        
         .catch(function(error){
             console.log(error)
         })
+        // DISCOS
+        fetch(urlAlbum)
+        .then(function(respuesta){
+            console.log(respuesta)
+            return respuesta.json()
+        })
+        .then(function(datos){
+        // Pido los datos que necesito de la URL (foto album, nombre album,nombre artista)
+            console.log(datos)
+            let albumes = datos.data
+            // la info que llego de la API la pongo dentro de mi codigo html
+            for (let i=0; i<5; i++){
+                listadoDiscos.innerHTML += `
+                <div class="textos">
+                <figure><img src="${albumes[i].cover}" alt="${albumes[i].title}"></figure>
+                <a href="detail-album.html">${albumes[i].title}</a>
+                <a href="detail-artist.html">${albumes[i].artist.name}</a>
+                </div>
+                `}
+        })        
+        .catch(function(error){
+            console.log(error)
+        })
+        // CANCIONES
+        fetch(urlTrack)
+        .then(function(respuesta){
+            console.log(respuesta)
+            return respuesta.json()
+        })
+        .then(function(datos){
+        // Pido los datos que necesito de la URL ( foto y nombre de la cancion, nombre del artista, nombre del album)
+            console.log(datos)
+            let canciones = datos.data
+            // la info que llego de la API la pongo dentro de mi codigo html
+            for (let i=0; i<5; i++){
+                listadoCanciones.innerHTML += `
+                <div class="textos">
+                <figure><img src="${canciones[i].album.cover}" alt="${canciones[i].title}"></figure>
+                    <a href="detail-track.html">${canciones[i].title}</a>
+                    <a href="detail-artist.html">${canciones[i].artist.name}</a>
+                    <a href="detail-album.html">${canciones[i].album.title}</a>
+                </div>
+            `}        
+        })        
+        .catch(function(error){
+            console.log(error)
+        })   
 });

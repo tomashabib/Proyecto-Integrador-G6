@@ -1,10 +1,15 @@
 window.addEventListener("load", function(){
+    console.log(location.search)
+    // Guardar la qs
+    const parametros = new URLSearchParams(location.search)
+    const cual = parametros.get("id")
+    console.log(cual)
     // llamar a  la seccion del artista y segunda seccion donde estan sus canciones
     let tituloArtista = document.querySelector(".tituloartist")
     let elArtista = document.querySelector(".contenedorartista")
     let cancionesArtista = document.querySelector(".botonesCanciones")
     // la url que me provee la API
-    let urlArtista = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27"
+    let urlArtista = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}`
 
     // hacer el Fetch
     fetch(urlArtista)
