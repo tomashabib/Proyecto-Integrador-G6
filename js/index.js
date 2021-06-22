@@ -46,7 +46,7 @@ window.addEventListener("load", function(){
                 <div class="textos">
                 <figure><img src="${albumes[i].cover}" alt="${albumes[i].title}"></figure>
                 <a href="detail-album.html">${albumes[i].title}</a>
-                <a href="detail-artist.html">${albumes[i].artist.name}</a>
+                <a href="detail-artist.html?id=${albumes[i].artist.id}">${albumes[i].artist.name}</a>
                 </div>
                 `}
         })        
@@ -69,7 +69,7 @@ window.addEventListener("load", function(){
                 <div class="textos">
                 <figure><img src="${canciones[i].album.cover}" alt="${canciones[i].title}"></figure>
                     <a href="detail-track.html">${canciones[i].title}</a>
-                    <a href="detail-artist.html">${canciones[i].artist.name}</a>
+                    <a href="detail-artist.html?id=${canciones[i].artist.id}">${canciones[i].artist.name}</a>
                     <a href="detail-album.html">${canciones[i].album.title}</a>
                 </div>
             `}        

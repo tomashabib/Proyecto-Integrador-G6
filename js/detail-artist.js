@@ -7,10 +7,11 @@ window.addEventListener("load", function(){
     // llamar a  la seccion del artista y segunda seccion donde estan sus canciones
     let tituloArtista = document.querySelector(".tituloartist a")
     let elArtista = document.querySelector(".contenedorartista img")
-    let cancionesArtista = document.querySelector(".botonesCanciones")
-    // la url que me provee la API
+    let albumImg = document.querySelector(".botonesCanciones li figure img")
+    let albumTitulo = document.querySelector(".botonesCanciones li a")
+    // las urls que me proveen los datos
     let urlArtista = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}`
-
+    let urlTopAlbums = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}/albums`
     // hacer el Fetch
     fetch(urlArtista)
         .then(function (respuesta){
@@ -35,5 +36,21 @@ window.addEventListener("load", function(){
         .catch(function(error){
             console.log(error)
         })
-    
+    // SEGUNDA PARTE Top Albums
+    fetch(urlTopAlbums)
+        .then(function (respuesta){
+            console.log(respuesta)
+            return respuesta.json()
+        })
+        .then(function(datos){
+            console.log(datos)
+            // pedir los datos
+            let topAlbumss = datos.data
+            // Ponerlos en el HTML
+            for (let i=0; i < topAlbumss.length ; i++){
+                 albumTitulo.innerText = `${topAlbumss[i].title}`
+                 albumImg.src = `${topAlbumss[i].cover}`
+                }
+        })
+
 });
