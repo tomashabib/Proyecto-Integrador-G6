@@ -49,8 +49,8 @@ window.addEventListener("load", function(){
             // Ponerlos en el HTML
             for (let i=0; i < topAlbumss.length ; i++){
                  albumTitulo.innerText = `${topAlbumss[i].title}`
+                 albumTitulo.href = `detail-track.html?id=${topAlbumss[i].id}`
                  albumImg.src = `${topAlbumss[i].cover}`
                 }
         })
-
 });
