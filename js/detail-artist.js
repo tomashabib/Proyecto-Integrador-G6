@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
             // PRIMERA PARTE :nombre del artista y imagen del artista 
             let nombre = datos.name
             console.log(nombre)
-            let foto = datos.picture
+            let foto = datos.picture_medium
             console.log(foto)
             // PRIMERA PARTE : lo pongo en el html
             // nombre como titulo
@@ -55,10 +55,6 @@ window.addEventListener("load", function(){
                         <a href="detail-album.html?id=${topAlbumss[i].id}}">${topAlbumss[i].title}</a> 
                     </figure>
                 </li>
-                `
-                //  albumTitulo.innerText = `${topAlbumss[i].title}`
-                //  albumTitulo.href = `detail-track.html?id=${topAlbumss[i].id}`
-                //  albumImg.src = `${topAlbumss[i].cover}`
-                }
+                `}
         })
 });

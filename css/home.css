@@ -375,6 +375,7 @@ nav ul li {
 }
 /* segunda parte del trabajo */
 /* intentando arreglar el index, q las imagenes aparezcan una al lado de la otra con el nombre abajo */
+/* CSS INDEX */
 .listadoArtistas{
     display: flex;
     flex-wrap: wrap;
@@ -389,4 +390,48 @@ nav ul li {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+/* css afecta todo, pensado en detalle artista */
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenedoralbumes a {
+    text-decoration: none;
+    color: #ffefcf;
+    background-color: #374547;
+    font-size: 150%;
+}
+.contenedoralbumes{
+    text-align: center;
+}
+
+/* css para detalle de Album */
+.genero,
+ .fecha {
+    background-color: #374547;
+    padding: 5%;
+    margin: 5%;
+    color: #ffefcf;
+    font-size: 150%;
+}
+.listaDeCanciones li {
+    text-decoration: none;
+    color: #ffefcf;
+    font-size: 150%;
+}
+.listaDeCanciones li a{
+    text-decoration: none;
+    color: #ffefcf;
+    font-size: 150%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.tracksDelAlbum{
+    background-color: #374547;
+    padding: 5%;
+    margin: 5%;
+    color: #ffefcf;
+    font-size: 150%;
 }
