@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
         .then(function(datos){
         // Pido los datos que necesito de la URL (nombre y foto artista)
             console.log(datos)
-            let artistas = datos.data
+            let generos = datos.data
             // la info que llego de la API la pongo dentro de mi codigo html
             // GENEROS
             for (let i=0; i<5; i++){
