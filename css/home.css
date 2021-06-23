@@ -412,7 +412,7 @@ nav ul li {
 .genero,
  .fecha {
     background-color: #374547;
-    padding: 5%;
+    padding: 2%;
     margin: 5%;
     color: #ffefcf;
     font-size: 150%;
@@ -427,11 +427,18 @@ nav ul li {
     color: #ffefcf;
     font-size: 150%;
     background-color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+}
+.listaDeCanciones li{
+    margin: 35px;
+    display: block;
+    text-align: center;
 }
 .tracksDelAlbum{
     background-color: #374547;
-    padding: 5%;
+    padding: 3%;
     margin: 5%;
     color: #ffefcf;
     font-size: 150%;
 }
+
