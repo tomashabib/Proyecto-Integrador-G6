@@ -4,12 +4,11 @@ window.addEventListener("load", function(){
     const parametros = new URLSearchParams(location.search)
     const cual = parametros.get("id")
     console.log(cual)
-    // Donde vohy a poner la informacion que traigo
-    let tituloArtista = document.querySelector(".tituloartist")
+    // Donde voy a poner la informacion que traigo
     let listadoDiscos = document.querySelector(".contenedoralbumes")
-    // La URL que me provee los datos
+    // La URL que me provee los datos para el Fetch
     let urlAlbumes = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${cual}`
-    // Hacer el fetch
+    // Fetch
     fetch(urlAlbumes)
         .then(function(respuesta){
             console.log(respuesta)
@@ -18,10 +17,18 @@ window.addEventListener("load", function(){
         .then(function(datos){
             console.log(datos)
             // Le pido a la API
-            // Primera Parte: Nombre del Artista 
-            let nombre = datos.name
-            console.log(nombre)
-            
+            //let nombreArtista = datos.artist
+            //console.log(nombreArtista)
+            //let tituloAlbum = datos.title
+            //console.log(tituloAlbum)
+            //let portadaAlbum = datos.cover
+            //console.log(portadaAlbum)
+            //let generoArtista = datos.genre_id
+            //console.log(generoArtista)
+            //let fechaAlbum = datos.release_date
+            //console.log(fechaAlbum)
+            //let listaCanciones = datos.tracklist
+            //console.log(listaCanciones)
         
         })
 
