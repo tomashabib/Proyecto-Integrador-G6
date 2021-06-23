@@ -17,20 +17,20 @@ window.addEventListener("load", function(){
         .then(function(datos){
             console.log(datos)
             // Le pido a la API
-            //let nombreArtista = datos.artist
-            //console.log(nombreArtista)
-            //let tituloAlbum = datos.title
-            //console.log(tituloAlbum)
-            //let portadaAlbum = datos.cover
-            //console.log(portadaAlbum)
-            //let generoArtista = datos.genre_id
-            //console.log(generoArtista)
-            //let fechaAlbum = datos.release_date
-            //console.log(fechaAlbum)
-            //let listaCanciones = datos.tracklist
-            //console.log(listaCanciones)
-        
+            let nombreArtista = datos.artist
+            console.log(nombreArtista)
+            let tituloAlbum = datos.title
+            console.log(tituloAlbum)
+            let portadaAlbum = datos.cover
+            console.log(portadaAlbum)
+            let generoArtista = datos.genre_id
+            console.log(generoArtista)
+            let fechaAlbum = datos.release_date
+            console.log(fechaAlbum)
+            let listaCanciones = datos.tracklist
+            console.log(listaCanciones)
         })
+
 
         .catch(function(error){
             console.log(error)
