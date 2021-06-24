@@ -29,31 +29,31 @@ window.addEventListener("load", function () {
             // Lo pongo en el HTML
             tituloGenero.innerText = nombreGenero
 
-    // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
-    // Fetch
-    fetch(urlGenerosArtistas)
-        .then(function (respuesta) {
-            console.log(respuesta)
-            return respuesta.json()
-        })
-        .then(function (datos) {
-            console.log(datos)
-            // Le pido a la API
-            let artistaGenero = datos.data
-            // Lo pongo en el HTML
-            for (let i = 0; i < 5; i++) {
-                listadoGeneros.innerHTML += `
+            // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
+            // Fetch
+            fetch(urlGenerosArtistas)
+                .then(function (respuesta) {
+                    console.log(respuesta)
+                    return respuesta.json()
+                })
+                .then(function (datos) {
+                    console.log(datos)
+                    // Le pido a la API
+                    let artistaGenero = datos.data
+                    // Lo pongo en el HTML
+                    for (let i = 0; i < 5; i++) {
+                        listadoGeneros.innerHTML += `
     <div class="textos">
         <figure><img src="${artistaGenero[i].picture_medium}" alt="${artistaGenero[i].name}"></figure>
         <a href="detail-genres.html?id=${artistaGenero[i].id}">${artistaGenero[i].name}</a>
         </div>
     `
-            }
+                    }
 
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
 
         })
 
