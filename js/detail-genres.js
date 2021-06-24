@@ -29,11 +29,6 @@ window.addEventListener("load", function () {
             // Lo pongo en el HTML
             tituloGenero.innerText = nombreGenero
 
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-
     // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
     // Fetch
     fetch(urlGenerosArtistas)
@@ -54,6 +49,11 @@ window.addEventListener("load", function () {
         </div>
     `
             }
+
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
 
         })
 
