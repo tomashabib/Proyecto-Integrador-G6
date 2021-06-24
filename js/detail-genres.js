@@ -7,7 +7,10 @@ window.addEventListener("load", function () {
     console.log(cual)
 
     // Donde voy a poner la infromacion que traigo
-    let listadoGeneros = document.querySelector(".contenedor generos")
+    let tituloGeneros = document.querySelector(".contenedor generos")
+    let imagenArtista = document.querySelector(".contenedor generos img")
+    let nombreArtista = document.querySelector(".contenedor generos a")
+
 
     // Las URL que me proveen los datos para el Fetch
     let urlGeneros = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${cual}`
@@ -23,11 +26,13 @@ window.addEventListener("load", function () {
         .then(function (datos) {
             console.log(datos)
             // Le pido a la API
-            // Primera Parte: Nombre del Genero
+            // Primera Parte: Nombre del Genero 
             let nombreGenero = datos.name
             console.log(nombreGenero)
             // Lo pongo en el HTML
-            tituloGenero.innerText = nombreGenero
+            tituloGeneros.innerText = nombreGenero
+
+
 
             // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
             // Fetch
@@ -42,7 +47,7 @@ window.addEventListener("load", function () {
                     let artistaGenero = datos.data
                     // Lo pongo en el HTML
                     for (let i = 0; i < 5; i++) {
-                        listadoGeneros.innerHTML += `
+                        nombreGeneros.innerHTML += `
     <div class="textos">
         <figure><img src="${artistaGenero[i].picture_medium}" alt="${artistaGenero[i].name}"></figure>
         <a href="detail-genres.html?id=${artistaGenero[i].id}">${artistaGenero[i].name}</a>
