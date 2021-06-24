@@ -33,6 +33,8 @@ console.log(location.search)
         .catch(function(error){
             console.log(error)
         })
+
+        //FALTA PARTE PLAYER Y PLAYLIST
         
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
