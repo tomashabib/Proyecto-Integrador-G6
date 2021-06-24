@@ -5,11 +5,10 @@ window.addEventListener("load", function () {
     let camboBuscar = document.querySelector("[name=search]")
     let mensaje = document.querySelector(".alert")
 
-    // submit  se verifica en el momento de envio. El submit es sobre el formulario
-    // que en el evento submit mire si hay info o no adentro, y si no hay decirle un mensaje
+    
     formulario.addEventListener("submit", function (event) {
 
-        // evita cosas predeterminadas. En este caso evita que se envie
+        // evita cosas predeterminadas.
         event.preventDefault();
 
         // si el value esta vacio, que le diga al usurio completar el campo
