@@ -44,19 +44,19 @@ window.addEventListener("load", function () {
         .then(function (datos) {
             console.log(datos)
             // Le pido a la API
-            let nombreArtista = datos.name
-            let idArtista = datos.id
-            let fotoArtista = datos.picture_medium
+            let artistaGenero = datos.data
             // Lo pongo en el HTML
+            for (let i = 0; i < 5; i++) {
+                listadoGeneros.innerHTML += `
+    <div class="textos">
+        <figure><img src="${artistaGenero[i].picture_medium}" alt="${artistaGenero[i].name}"></figure>
+        <a href="detail-genres.html?id=${artistaGenero[i].id}">${artistaGenero[i].name}</a>
+        </div>
+    `
+            }
 
         })
-    //for (let i=0; i<5; i++){
-    //   listadoGeneros.innerHTML += `
-    //    <div class="textos">
-    //    <figure><img src="${Genero[i].picture}" alt="${Genero[i].name}"></figure>
-    //    <a href="detail-genres.html?id=${genero[i].id}">${genero[i].name}</a>
-    //    </div>
-    //`}
+
 
 
     // VALIDACIÓN DE FORMULARIO 
