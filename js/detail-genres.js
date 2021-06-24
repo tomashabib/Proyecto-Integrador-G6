@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     console.log(location.search)
 
     // Guardar la QS // Id Generos
@@ -16,11 +16,11 @@ window.addEventListener("load", function(){
     // GENEROS
     // Fetch
     fetch(urlGeneros)
-        .then(function(respuesta){
+        .then(function (respuesta) {
             console.log(respuesta)
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             // Le pido a la API
             // Primera Parte: Nombre del Genero
@@ -29,45 +29,45 @@ window.addEventListener("load", function(){
             // Lo pongo en el HTML
             tituloGenero.innerText = nombreGenero
 
-        })        
-        .catch(function(error){
+        })
+        .catch(function (error) {
             console.log(error)
         })
 
-        // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
-        // Fetch
-        fetch(urlGenerosArtistas)
-        .then(function(respuesta){
+    // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
+    // Fetch
+    fetch(urlGenerosArtistas)
+        .then(function (respuesta) {
             console.log(respuesta)
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             // Le pido a la API
             let nombreArtista = datos.name
             let idArtista = datos.id
             let fotoArtista = datos.picture_medium
             // Lo pongo en el HTML
-            
+
         })
-            //for (let i=0; i<5; i++){
-            //   listadoGeneros.innerHTML += `
-            //    <div class="textos">
-            //    <figure><img src="${Genero[i].picture}" alt="${Genero[i].name}"></figure>
-            //    <a href="detail-genres.html?id=${genero[i].id}">${genero[i].name}</a>
-            //    </div>
-            //`}
-        
-    
+    //for (let i=0; i<5; i++){
+    //   listadoGeneros.innerHTML += `
+    //    <div class="textos">
+    //    <figure><img src="${Genero[i].picture}" alt="${Genero[i].name}"></figure>
+    //    <a href="detail-genres.html?id=${genero[i].id}">${genero[i].name}</a>
+    //    </div>
+    //`}
+
+
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-    let formulario = document.querySelector("form") 
+    let formulario = document.querySelector("form")
     let camboBuscar = document.querySelector("[name=search]")
     let mensaje = document.querySelector(".alert")
 
     // submit  se verifica en el momento de envio. El submit es sobre el formulario
     // que en el evento submit mire si hay info o no adentro, y si no hay decirle un mensaje
-    formulario.addEventListener("submit" , function (event) {
+    formulario.addEventListener("submit", function (event) {
 
         // evita cosas predeterminadas. En este caso evita que se envie
         event.preventDefault();
@@ -76,12 +76,12 @@ window.addEventListener("load", function(){
         if (camboBuscar.value == "") {
 
             mensaje.innerText = "Completar el campo"
-                
-        } else if (camboBuscar.value.length < 3 ) {
+
+        } else if (camboBuscar.value.length < 3) {
 
             mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
 
-        } else{
+        } else {
             this.submit()
         }
 

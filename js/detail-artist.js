@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     console.log(location.search)
     // Guardar la qs // Id del artista
     let laQS = location.search
@@ -9,17 +9,17 @@ window.addEventListener("load", function(){
     let tituloArtista = document.querySelector(".tituloartist a")
     let elArtista = document.querySelector(".contenedorartista img")
     let losAlbumes = document.querySelector(".botonesCanciones")
-    
+
     // las urls que me proveen los datos
     let urlArtista = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}`
-    let urlTopAlbums = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}/albums`+ `&&limit=5`
+    let urlTopAlbums = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${cual}/albums` + `&&limit=5`
     // hacer el Fetch
     fetch(urlArtista)
-        .then(function (respuesta){
+        .then(function (respuesta) {
             console.log(respuesta)
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             // Le pido a la API 
             // PRIMERA PARTE :nombre del artista y imagen del artista 
@@ -34,21 +34,21 @@ window.addEventListener("load", function(){
             elArtista.src = foto
             elArtista.alt = nombre
         })
-        .catch(function(error){
+        .catch(function (error) {
             console.log(error)
         })
     // SEGUNDA PARTE Top Albums
     fetch(urlTopAlbums)
-        .then(function (respuesta){
+        .then(function (respuesta) {
             console.log(respuesta)
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             // pedir los datos
             let topAlbumss = datos.data
             // Ponerlos en el HTML
-            for (let i=0; i < topAlbumss.length ; i++){
+            for (let i = 0; i < topAlbumss.length; i++) {
                 losAlbumes.innerHTML += `
                 <li>
                     <figure>
@@ -56,17 +56,18 @@ window.addEventListener("load", function(){
                         <a href="detail-album.html?id=${topAlbumss[i].id}}">${topAlbumss[i].title}</a> 
                     </figure>
                 </li>
-                `}
+                `
+            }
         })
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-    let formulario = document.querySelector("form") 
+    let formulario = document.querySelector("form")
     let camboBuscar = document.querySelector("[name=search]")
     let mensaje = document.querySelector(".alert")
 
     // submit  se verifica en el momento de envio. El submit es sobre el formulario
     // que en el evento submit mire si hay info o no adentro, y si no hay decirle un mensaje
-    formulario.addEventListener("submit" , function (event) {
+    formulario.addEventListener("submit", function (event) {
 
         // evita cosas predeterminadas. En este caso evita que se envie
         event.preventDefault();
@@ -75,12 +76,12 @@ window.addEventListener("load", function(){
         if (camboBuscar.value == "") {
 
             mensaje.innerText = "Completar el campo"
-                
-        } else if (camboBuscar.value.length < 3 ) {
+
+        } else if (camboBuscar.value.length < 3) {
 
             mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
 
-        } else{
+        } else {
             this.submit()
         }
 

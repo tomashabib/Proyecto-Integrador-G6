@@ -1,5 +1,5 @@
-window.addEventListener("load", function(){
-    console.log(location.search) 
+window.addEventListener("load", function () {
+    console.log(location.search)
     // Guardar la qs // Id del Album
     const parametros = new URLSearchParams(location.search)
     const cual = parametros.get("id")
@@ -18,11 +18,11 @@ window.addEventListener("load", function(){
 
     // Fetch
     fetch(urlAlbumes)
-        .then(function(respuesta){
+        .then(function (respuesta) {
             console.log(respuesta)
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             // lo pido a la API
             let nombreAlbum = datos.title
@@ -40,30 +40,31 @@ window.addEventListener("load", function(){
             elArtista.innerText = nombreArtista
             elArtista.href = `detail-artist.html?id=${idArtista}`
             fecha.innerText += fechaAlbum
-            
-            for (let i=0; i < descripcionA.length ; i++){
+
+            for (let i = 0; i < descripcionA.length; i++) {
                 genero.innerText += descripcionA[i].name
             }
 
-            for (let i=0; i < listaCanciones.length ; i++){
+            for (let i = 0; i < listaCanciones.length; i++) {
                 listaDeCanciones.innerHTML += `
                 <li><a href="detail-track.html?id=${listaCanciones[i].id}">${listaCanciones[i].title}<a/></li>
-            `}
-    
+            `
+            }
+
         })
-        .catch(function(error){
+        .catch(function (error) {
             console.log(error)
         })
 
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-    let formulario = document.querySelector("form") 
+    let formulario = document.querySelector("form")
     let camboBuscar = document.querySelector("[name=search]")
     let mensaje = document.querySelector(".alert")
 
     // submit  se verifica en el momento de envio. El submit es sobre el formulario
     // que en el evento submit mire si hay info o no adentro, y si no hay decirle un mensaje
-    formulario.addEventListener("submit" , function (event) {
+    formulario.addEventListener("submit", function (event) {
 
         // evita cosas predeterminadas. En este caso evita que se envie
         event.preventDefault();
@@ -72,16 +73,16 @@ window.addEventListener("load", function(){
         if (camboBuscar.value == "") {
 
             mensaje.innerText = "Completar el campo"
-                
-        } else if (camboBuscar.value.length < 3 ) {
+
+        } else if (camboBuscar.value.length < 3) {
 
             mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
 
-        } else{
+        } else {
             this.submit()
         }
 
-    })   
+    })
 
 
 });

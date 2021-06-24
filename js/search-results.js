@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     // Traemos el texto buscado en el buscador    
     const parametro = new URLSearchParams(location.search)
     const laQuery = parametro.get("search")
@@ -21,19 +21,19 @@ window.addEventListener("load", function(){
     // traemos los datos que nos provee la API de Dezeer
     let urlSearch = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${laQuery}&&limit=5`
     fetch(urlSearch)
-        .then(function(respuesta){
+        .then(function (respuesta) {
             return respuesta.json()
         })
-        .then(function(datos){
+        .then(function (datos) {
             console.log(datos)
             let busqueda = datos.data
 
-            tituloH1.innerHTML +=`
+            tituloH1.innerHTML += `
             <span>${laQuery}</span>
-            ` 
+            `
             // si no hay resultado
-            if (busqueda.length == 0){
-                noResultado.innerHTML +=`
+            if (busqueda.length == 0) {
+                noResultado.innerHTML += `
                 <img src="images/lupa.png" alt="lupa">
                 <p>No se han encontrado resultados para : ${laQuery} </p>
                 `
@@ -41,43 +41,45 @@ window.addEventListener("load", function(){
 
             } else {
                 // ARTISTAS
-                for (let i=0; i < busqueda.length ; i++){
+                for (let i = 0; i < busqueda.length; i++) {
                     resultado.innerText = busqueda[i].artist.name
                     resultado.href = `detail-artist.html?id=${busqueda[i].artist.id}`
                     imgResultado.src = busqueda[i].artist.picture
                     imgResultado.alt = busqueda[i].artist.name
                 }
                 // ALBUMS
-                for (let i=0; i < busqueda.length ; i++){
+                for (let i = 0; i < busqueda.length; i++) {
                     albums.innerHTML += `
                     <article>
                     <img src="${busqueda[i].album.cover}" alt="${busqueda[i].album.title}">
                     <p><a href="detail-album.html?id=${busqueda[i].album.id}">${busqueda[i].album.title}</a></p>
                     </article>
-                `}
+                `
+                }
                 // DISCOS
-                for (let i=0; i < busqueda.length ; i++){
+                for (let i = 0; i < busqueda.length; i++) {
                     canciones.innerHTML += `
                     <article>
                     <img src="${busqueda[i].album.cover}" alt="${busqueda[i].title}">
                     <p><a href="detail-track.html?id=${busqueda[i].id}">${busqueda[i].title}</a></p>
                     </article>
-                `}
+                `
+                }
             }
         })
-        .catch(function(error){
+        .catch(function (error) {
             console.log(error)
         })
 
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-    let formulario = document.querySelector("form") 
+    let formulario = document.querySelector("form")
     let camboBuscar = document.querySelector("[name=search]")
     let mensaje = document.querySelector(".alert")
 
     // submit  se verifica en el momento de envio. El submit es sobre el formulario
     // que en el evento submit mire si hay info o no adentro, y si no hay decirle un mensaje
-    formulario.addEventListener("submit" , function (event) {
+    formulario.addEventListener("submit", function (event) {
 
         // evita cosas predeterminadas. En este caso evita que se envie
         event.preventDefault();
@@ -86,12 +88,12 @@ window.addEventListener("load", function(){
         if (camboBuscar.value == "") {
 
             mensaje.innerText = "Completar el campo"
-                
-        } else if (camboBuscar.value.length < 3 ) {
+
+        } else if (camboBuscar.value.length < 3) {
 
             mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
 
-        } else{
+        } else {
             this.submit()
         }
 
