@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
     if (playlist === null) {
         console.log("sin canciones")
         contenedor.innerHTML = `
-        <p>Aun no hay canciones en tu Playlist</p>`
+        <p>Agregue una cancion para verla aqui</p>`
     } else {
         playlist.forEach(function (idTrack) {
             encontrarTrack(idTrack)
@@ -29,9 +29,7 @@ window.addEventListener("load", function () {
         
             
             .then(function (tracks) {
-                console.log(tracks)
-                let untrack = tracks;
-                let iduntrack = tracks.id;
+                console.log(tracks) 
                 let nombretrack = tracks.title;
                 let imagen = tracks.album.cover_medium;
                 let nombrealbum = tracks.album.title
