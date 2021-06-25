@@ -24,41 +24,48 @@ window.addEventListener("load", function () {
             return respuesta.json()
         })
         .then(function (datos) {
-            console.log(datos)
-            // Le pido a la API
-            // Primera Parte: Nombre del Genero 
-            let nombreGenero = datos.name
-            console.log(nombreGenero)
-            // Lo pongo en el HTML
-            tituloGeneros.innerText += nombreGenero
+                console.log(datos)
+                // Le pido a la API
+                // Primera Parte: Nombre del Genero 
+                let nombreGenero = datos.name
+                console.log(nombreGenero)
+                // Lo pongo en el HTML
+                tituloGeneros.innerText = nombreGenero
 
 
 
-            // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
-            // Fetch
-            fetch(urlGenerosArtistas)
-                .then(function (respuesta) {
-                    console.log(respuesta)
-                    return respuesta.json()
-                })
-                .then(function (datos) {
-                    console.log(datos)
-                    // Le pido a la API
-                    let artistaGenero = datos.data
-                    // Lo pongo en el HTML
-                    for (let i = 0; i < 5; i++) {
-                        nombreGeneros.innerHTML += `
-    <div class="textos">
-        <figure><img src="${artistaGenero[i].picture_medium}" alt="${artistaGenero[i].name}"></figure>
-        <a href="detail-genres.html?id=${artistaGenero[i].id}">${artistaGenero[i].name}</a>
-        </div>
-    `
-                    }
+                // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
+                // Fetch
+                fetch(urlGenerosArtistas)
+                    .then(function (respuesta) {
+                        console.log(respuesta)
+                        return respuesta.json()
+                    })
+                    .then(function (datos) {
+                            console.log(datos)
+                            // Le pido a la API
+                            let nombreArtista = datos.name
+                            console.log(nombreArtista)
+                            let fotoArtista = datos.picture_medium
+                            console.log(fotoArtista)
+                            // Lo pongo en el HTML
+                            infoArtista.src = fotoArtista
+                            infoArtista.alt = nombreArtista
 
-                })
-                .catch(function (error) {
-                    console.log(error)
-                })
+
+                            // for (let i = 0; i < 5; i++) {
+                            //   tituloGeneros.innerHTML += `
+                            //<div class="textos">
+                            // <figure><img src="${artistaGenero[i].picture_medium}" alt="${artistaGenero[i].name}"></figure>
+                            // <a href="detail-genres.html?id=${artistaGenero[i].id}">${artistaGenero[i].name}</a>
+                            // </div>
+                            //  `
+                        })
+
+                    })
+            .catch(function (error) {
+                console.log(error)
+            })
 
         })
 
