@@ -441,3 +441,10 @@ nav ul li {
     color: #ffefcf;
     font-size: 150%;
 }
+/* nombre de artista en detalle de genero */
+h4 a {
+    text-decoration: none;
+    color: #ffefcf;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+}

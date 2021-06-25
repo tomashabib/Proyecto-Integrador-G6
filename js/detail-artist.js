@@ -1,4 +1,4 @@
-giwindow.addEventListener("load", function () {
+window.addEventListener("load", function () {
     console.log(location.search)
     // Guardar la qs // Id del artista
     let laQS = location.search
