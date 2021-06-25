@@ -32,25 +32,29 @@ window.addEventListener("load", function () {
                 // Lo pongo en el HTML
                 tituloGeneros.innerText = nombreGenero
 
+        .catch(function (error) {
+                console.log(error)
+        })
 
 
-                // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
-                // Fetch
-                fetch(urlGenerosArtistas)
-                    .then(function (respuesta) {
-                        console.log(respuesta)
-                        return respuesta.json()
-                    })
-                    .then(function (datos) {
-                            console.log(datos)
-                            // Le pido a la API
-                            let nombreArtista = datos.name
-                            console.log(nombreArtista)
-                            let fotoArtista = datos.picture_medium
-                            console.log(fotoArtista)
-                            // Lo pongo en el HTML
-                            infoArtista.src = fotoArtista
-                            infoArtista.alt = nombreArtista
+
+    // Segunda Parte: Lista de artistas del Genero con su foto y su nombre
+    // Fetch
+    fetch(urlGenerosArtistas)
+        .then(function (respuesta) {
+            console.log(respuesta)
+            return respuesta.json()
+        })
+        .then(function (datos) {
+            console.log(datos)
+            // Le pido a la API
+            let nombreArtista = datos.name
+            console.log(nombreArtista)
+            let fotoArtista = datos.picture_medium
+            console.log(fotoArtista)
+            // Lo pongo en el HTML
+            infoArtista.src = fotoArtista
+            infoArtista.alt = nombreArtista
 
 
                             // for (let i = 0; i < 5; i++) {
@@ -63,37 +67,37 @@ window.addEventListener("load", function () {
                         })
 
                     })
-            .catch(function (error) {
-                console.log(error)
-            })
-
+        .catch(function (error) {
+            console.log(error)
         })
+
+    })
 
 
 
 // VALIDACIÓN DE FORMULARIO 
 // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-let formulario = document.querySelector("form")
-let camboBuscar = document.querySelector("[name=search]")
-let mensaje = document.querySelector(".alert")
+    let formulario = document.querySelector("form")
+    let camboBuscar = document.querySelector("[name=search]")
+    let mensaje = document.querySelector(".alert")
 
 
-formulario.addEventListener("submit", function (event) {
+    formulario.addEventListener("submit", function (event) {
 
-    // evita cosas predeterminadas. 
-    event.preventDefault();
+        // evita cosas predeterminadas. 
+        event.preventDefault();
 
-    // si el value esta vacio, que le diga al usurio completar el campo
-    if (camboBuscar.value == "") {
+        // si el value esta vacio, que le diga al usurio completar el campo
+        if (camboBuscar.value == "") {
 
-        mensaje.innerText = "Completar el campo"
+            mensaje.innerText = "Completar el campo"
 
-    } else if (camboBuscar.value.length < 3) {
+        } else if (camboBuscar.value.length < 3) {
 
-        mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
+            mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
 
-    } else {
-        this.submit()
-    }
+        } else {
+            this.submit()
+        }
 
 });
