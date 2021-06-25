@@ -7,9 +7,11 @@ window.addEventListener("load", function () {
 
     console.log(playlist);
 
-    let listaTracks = document.querySelector(".medioplaylist");
-    if (playlist.lenght == 0) {
-        listaTracks.innerHTML += `
+    let contenedor = document.querySelector(".medioplaylist");
+    let listaTrack = document.querySelector("#lista_canciones")
+    if (playlist === null) {
+        console.log("sin canciones")
+        contenedor.innerHTML = `
         <p>Aun no hay canciones en tu Playlist</p>`
     } else {
         playlist.forEach(function (idTrack) {
@@ -20,21 +22,24 @@ window.addEventListener("load", function () {
     function encontrarTrack(idTrack) {
         let url = proxy + "https://api.deezer.com/track/" + idTrack;
         fetch(url)
-            .then(function (response) {
+            .then(function (response){
+                console.log(response)
                 return response.json();
             })
-            .then(function (response) {
-                return response.json();
-            })
+        
+            
             .then(function (tracks) {
                 console.log(tracks)
                 let untrack = tracks;
-                let iduntrack = untrack.id;
-                let nombretrack = untrack.title;
-                listaTracks.innerHTML += `
-            <article>
-                <h3> <a class="decoration" href="detail-track.html?id=${iduntrack}">${nombretrack} </a> </h3>
-            </article>    
+                let iduntrack = tracks.id;
+                let nombretrack = tracks.title;
+                let imagen = tracks.album.cover_medium;
+                let nombrealbum = tracks.album.title
+                listaTrack.innerHTML += `
+            <li class="cancion-agregada">
+                <img src=${imagen} >${nombretrack} | ${nombrealbum}
+                </li>
+            </li>
             `
             })
             .catch(function (error) {
