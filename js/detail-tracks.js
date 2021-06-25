@@ -21,20 +21,62 @@ window.addEventListener("load", function () {
             console.log(datos)
             // Le pido a la API
             let nombreAlbum = datos.album.title
-            let imgAlbum = datos.cover_medium
+            let imgAlbum = datos.album.cover_medium
             let nombreArtista = datos.artist.name
             let idArtista = datos.artist.id
             let nombreCancion = datos.title
+            let audioCancion = datos.preview
+            let idCancion = datos.id
+            
+            let titulo = document.querySelector("#titulo_de_la_cancion")
+            titulo.innerHTML = nombreCancion
+            
+            let botonesPlaylist = document.querySelector(".botonesplaylist")
+            botonesPlaylist.innerHTML = `
+            <img id="imagen_cancion"  src="${imgAlbum}" class="imagenprincipal">
+                <p id="nombre_album">Nombre del Artista:${nombreArtista} | Nombre del album: ${nombreAlbum}</p>
+                <div ><a href="playlist.html">Ver mi Playlist</a></div>
+                <div id="boton_playlist"><img id="imagen_album" src="images/Agregar.png" alt="Agregar a mi Playlist" title="Agregar a mi Playlist"></div>
+                <div id="boton_quitar"><img id="imagen_album" src="images/Agregar.png" alt="Sacar de mi Playlist" title="Sacar de mi Playlist"></div>
+                <div><audio src=${datos.preview} controls=true </audio></div>
+            `
+            
 
-            // poniendolo en el HTML
+            let boton_playlist = document.querySelector("#boton_playlist")
+            boton_playlist.addEventListener("click", function(){
+                if (localStorage.getItem("playlist") === null){
+                    console.log("no existe la propiedad")
+                    let lista_playlist = [idCancion]
+                    localStorage.setItem("playlist",JSON.stringify(lista_playlist))
+                } else { 
+                    let storage = localStorage.getItem("playlist")
+                    storage = JSON.parse(storage)
+                    storage.push(idCancion)
+                    console.log(storage)
+                    storage = JSON.stringify(storage)
+                    localStorage.setItem("playlist", storage)
+
+                } 
+                
+            })
+
+            let boton_quitar = document.querySelector("#boton_quitar")
+            boton_quitar.addEventListener("click", function(){
+                let botonEliminar = localStorage.getItem("playlist")
+                botonEliminar = JSON.parse(botonEliminar)
+                botonEliminar.pop(idCancion)
+                botonEliminar = JSON.stringify(botonEliminar)
+                localStorage.setItem("playlist", botonEliminar)
+        
+
+            })
+    
 
         })
-
         .catch(function (error) {
             console.log(error)
         })
 
-    //FALTA PARTE PLAYER Y PLAYLIST
 
     // VALIDACIÓN DE FORMULARIO 
     // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
@@ -60,8 +102,6 @@ window.addEventListener("load", function () {
         } else {
             this.submit()
         }
-
     })
 
-
-});
+    });
