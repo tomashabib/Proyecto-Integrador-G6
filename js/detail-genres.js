@@ -7,9 +7,9 @@ window.addEventListener("load", function () {
     console.log(cual)
 
     // Donde voy a poner la infromacion que traigo
-    let tituloGeneros = document.querySelector(".contenedor generos")
-    let imagenArtista = document.querySelector(".contenedor generos img")
-    let nombreArtista = document.querySelector(".contenedor generos a")
+    let tituloGeneros = document.querySelector(".contenedorartista a ")
+    let infoArtista = document.querySelector(".contenedorartista img")
+
 
 
     // Las URL que me proveen los datos para el Fetch
@@ -71,29 +71,29 @@ window.addEventListener("load", function () {
 
 
 
-    // VALIDACIÓN DE FORMULARIO 
-    // capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
-    let formulario = document.querySelector("form")
-    let camboBuscar = document.querySelector("[name=search]")
-    let mensaje = document.querySelector(".alert")
+// VALIDACIÓN DE FORMULARIO 
+// capturamos formulario, campo a chequear y lugar donde enviaremos el menasaje
+let formulario = document.querySelector("form")
+let camboBuscar = document.querySelector("[name=search]")
+let mensaje = document.querySelector(".alert")
 
-    
-    formulario.addEventListener("submit", function (event) {
 
-        // evita cosas predeterminadas. 
-        event.preventDefault();
+formulario.addEventListener("submit", function (event) {
 
-        // si el value esta vacio, que le diga al usurio completar el campo
-        if (camboBuscar.value == "") {
+    // evita cosas predeterminadas. 
+    event.preventDefault();
 
-            mensaje.innerText = "Completar el campo"
+    // si el value esta vacio, que le diga al usurio completar el campo
+    if (camboBuscar.value == "") {
 
-        } else if (camboBuscar.value.length < 3) {
+        mensaje.innerText = "Completar el campo"
 
-            mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
+    } else if (camboBuscar.value.length < 3) {
 
-        } else {
-            this.submit()
-        }
+        mensaje.innerText = 'Por favor ingrese al menos 3 caracteres a buscar'
+
+    } else {
+        this.submit()
+    }
 
 });
