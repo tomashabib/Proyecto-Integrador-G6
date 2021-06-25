@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
             let nombreGenero = datos.name
             console.log(nombreGenero)
             // Lo pongo en el HTML
-            tituloGeneros.innerText = nombreGenero
+            tituloGeneros.innerText += nombreGenero
 
 
 
